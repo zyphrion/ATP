@@ -8,9 +8,9 @@
   <sprites name="sprites">
     <sprites name="Ballista">
       <sprite>sprites\spr_ballista_base_wood</sprite>
-      <sprite>sprites\spr_ballista_anchor</sprite>
-      <sprite>sprites\spr_ballista_arm</sprite>
-      <sprite>sprites\spr_ballista_loader</sprite>
+      <sprite>sprites\spr_ballista_anchor_wood</sprite>
+      <sprite>sprites\spr_ballista_arm_wood</sprite>
+      <sprite>sprites\spr_ballista_loader_wood</sprite>
       <sprite>sprites\spr_ballista_wheels_wood</sprite>
     </sprites>
   </sprites>
