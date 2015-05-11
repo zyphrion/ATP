@@ -26,6 +26,9 @@
       <object>objects\obj_ballista_loader</object>
     </objects>
   </objects>
+  <rooms name="rooms">
+    <room>rooms\Testing_Room</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
