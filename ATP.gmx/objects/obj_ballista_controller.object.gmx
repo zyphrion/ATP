@@ -55,6 +55,7 @@ cocking = 0;
 cocked = 0;
 fully_cocked = 0;
 angle_change = 0;
+moving = 0;
 
 //Material and Construction Type
 base_type = 0;
@@ -110,6 +111,11 @@ arm.x = anchor.arm_x;
 arm.y = anchor.arm_y;
 loader.x = arm.loader_stop_0_x;
 loader.y = arm.loader_stop_0_y;
+
+if(aim_angle != arm.direction)//if the angle changes
+{
+    arm.direction = angle;
+}
 </string>
           </argument>
         </arguments>
@@ -177,8 +183,8 @@ switch(input_state)
     change_angle = 0;
     fire = 0;
     reload = 0;
-    case 1:change_angle = 1;
-    case 2:change_angle = -1;
+    case 1: change_angle = 1;
+    case 2: change_angle = -1;
     case 3:;
     case 4:;
     case 5:fire = 1;
@@ -215,21 +221,87 @@ switch(input_state)
           <argument>
             <kind>1</kind>
             <string>///Control Structure
-
+/*
+cannot adjust aiming angle while performing any other action
+cannot cock weapon while performing any other action
+*/
 //angle change
-if(!firing &amp;&amp; !cocking &amp;&amp; !reloading)
+if(!moving)//can only adjust angle, reload, fire, or cock weapon if it is stationary
 {
-    if(change_angle == 1 &amp;&amp; arm.direction &lt; 90)
+    if(!firing &amp;&amp; !cocking &amp;&amp; !reloading)
     {
-        aim_angle++;
+        if(change_angle == 1 &amp;&amp; arm.direction &lt; 90)
+        {
+            aim_angle++;
+        }
+        else if(change_angle == -1 &amp;&amp; arm.direction &gt; 0)
+        {
+            aim_angle--;
+        }
+        else//do nothing
+        {}
     }
-    else if(change_angle == -1 &amp;&amp; arm.direction &gt; 0)
+    else if(fire)
     {
-        aim_angle--;
+        if(cocked)
+        {
+            firing = true;
+        }
+        else//cannot fire uncocked weapon
+        {
+            firing = false;
+        }
     }
-    else//do nothing
-    {}
+    else if(cock)
+    {
+        if(!fully_cocked &amp;&amp; !firing)
+        {
+            cocking = true;
+        }
+        else//cannot cock a weapon that is fully cocked or firing
+        {
+            cocking = false;
+        }
+    }
+    else if(reload)
+    {
+        if(cocked &amp;&amp; !firing)
+        {
+            reloading = true;
+        }
+        else//cannot reload a weapon thats not cocked or is firing
+        {
+            reloading = false;
+        }
+    }
+    if(change_angle == 0)
+    {
+    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///collision checking code
+//this code will calculate the next position/movement path of the object for use in collision detection
 </string>
           </argument>
         </arguments>

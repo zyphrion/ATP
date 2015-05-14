@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Init
+input = 0;
+selected_weapon = 0;
 </string>
           </argument>
         </arguments>
@@ -75,7 +77,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>///Player Input
+//input recognization
+if(keyboard_check(ord(w)))
+{
+    input = 1;
+}
+else if(keyboard_check(ord(d)))
+{
+    input = 2;
+}
+else
+{
+    input = 0;
+}
+
+//ballista controller switch
+/*if(selected_weapon.type = 1)
+{
+    switch(input)
+    {
+        case 0:
+            
+        break;
+    }
+}*/
+</string>
           </argument>
         </arguments>
       </action>
