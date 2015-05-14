@@ -11,19 +11,28 @@
       <sprite>sprites\spr_ballista_anchor_wood</sprite>
       <sprite>sprites\spr_ballista_arm_wood</sprite>
       <sprite>sprites\spr_ballista_loader_wood</sprite>
-      <sprite>sprites\spr_ballista_wheels_wood</sprite>
+      <sprite>sprites\ballista_wheel_wood</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\script0.gml</script>
+  </scripts>
   <objects name="objects">
     <objects name="Ballista">
       <object>objects\obj_ballista_base</object>
       <object>objects\obj_ballista_anchor</object>
-      <object>objects\obj_ballista_controller</object>
       <object>objects\obj_ballista_arm</object>
-      <object>objects\obj_ballista_wheels</object>
       <object>objects\obj_ballista_loader</object>
+      <object>objects\obj_ballista_front_wheel</object>
+      <object>objects\obj_ballista_back_wheel</object>
+    </objects>
+    <objects name="Controllers">
+      <object>objects\obj_player_controller</object>
+      <object>objects\obj_ballista_controller</object>
+      <object>objects\obj_game_controller</object>
+      <object>objects\obj_UI_controller</object>
     </objects>
   </objects>
   <rooms name="rooms">
