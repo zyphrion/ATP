@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,6 +27,53 @@
             <kind>1</kind>
             <string>///Contructor
 //starting scene information
+/*
+There are not many scenes for this game
+0 - Starting Scene
+This scene will include
+- Splash Screen
+- Starting Cinematic
+- Start Menu
+All options for gameplay will be chosen within the start menu system
+
+1 - Gameplay Scene
+This scene will include
+- The gameplay screen
+- The pause menu
+- The progression menus
+*/
+
+scene0 = scene_start;
+scene1 = scene_game;
+if(room != scene0)
+{room_goto(scene0);}
+menu = 0;
+
+loading = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(room == scene0 &amp;&amp; loading)
+room_goto_next();
 </string>
           </argument>
         </arguments>

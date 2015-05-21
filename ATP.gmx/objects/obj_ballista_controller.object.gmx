@@ -28,6 +28,8 @@
             <string>///constructor code
 init = false;
 
+owner = 0;
+
 //initial anchor points
 //The controller object is the center of the base to start, though I want to play with it staying attached there
 //each objects x/y will be the base on the center of gravity, or pivot point for each piece
@@ -55,6 +57,7 @@ cocking = 0;
 cocked = 0;
 fully_cocked = 0;
 angle_change = 0;
+move = 0;
 moving = 0;
 
 //Material and Construction Type
@@ -64,64 +67,13 @@ arm_type = 0;
 loader_type = 0;
 anchor_type = 0;
 spring_type = 0;
+
+//property variables
+aim_angle = 0;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="3" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Reconciling Changes
-base_x = x;
-base_y = y;
-front_wheel_x = x+21;
-front_wheel_y = y;
-back_wheel_x = x-22;
-back_wheel_y = y;
-anchor_x = x-22;
-anchor_y = y;
-arm_x = x-22;
-arm_y = y-13;
-loader_x = x-22;
-loader_y = y-13;
-
-//testing to verify all of the built in attachments are correct
-base.x = base_x;
-base.y = base_y;
-front_wheel.x = base.front_wheel_x;
-front_wheel.y = base.front_wheel_y;
-anchor.x = base.anchor_x;
-anchor.y = base.anchor_y;
-arm.x = anchor.arm_x;
-arm.y = anchor.arm_y;
-loader.x = arm.loader_stop_0_x;
-loader.y = arm.loader_stop_0_y;
-
-if(aim_angle != arm.direction)//if the angle changes
-{
-    arm.direction = angle;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -159,6 +111,64 @@ if(!init)
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Reconciling Changes
+base_x = x;
+base_y = y;
+front_wheel_x = x+21;
+front_wheel_y = y;
+back_wheel_x = x-22;
+back_wheel_y = y;
+anchor_x = x-22;
+anchor_y = y;
+arm_x = x-22;
+arm_y = y-13;
+loader_x = x-22;
+loader_y = y-13;
+
+//testing to verify all of the built in attachments are correct
+/*base.x = base_x;
+base.y = base_y;
+front_wheel.x = base.front_wheel_x;
+front_wheel.y = base.front_wheel_y;
+anchor.x = base.anchor_x;
+anchor.y = base.anchor_y;
+arm.x = anchor.arm_x;
+arm.y = anchor.arm_y;
+loader.x = arm.loader_stop_0_x;
+loader.y = arm.loader_stop_0_y;
+*/
+
+with(arm)
+{
+    if(direction != owner.aim_angle)//if the angle changes
+    {
+        direction = owner.aim_angle;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>

@@ -14,8 +14,12 @@
       <sprite>sprites\ballista_wheel_wood</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
-  <paths name="paths"/>
+  <backgrounds name="background">
+    <background>background\bgr_logo</background>
+  </backgrounds>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\script0.gml</script>
   </scripts>
@@ -36,7 +40,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Testing_Room</room>
+    <room>rooms\scene_start</room>
+    <room>rooms\scene_game</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
