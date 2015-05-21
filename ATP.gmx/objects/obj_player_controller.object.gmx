@@ -108,11 +108,11 @@ if(!init)
             <kind>1</kind>
             <string>///Player Input
 //input recognization
-if(keyboard_check(ord('w')))
+if(keyboard_check(ord('W')))
 {
     input = 1;
 }
-else if(keyboard_check(ord('d')))
+else if(keyboard_check(ord('S')))
 {
     input = 2;
 }
@@ -127,18 +127,21 @@ if(ballista.owner = id)//if you own the ballista
     switch(input)
     {
         case 0:
+            input_state = 0;
             with(ballista)
             {
                 input_state = 0;
             }
         break;
         case 1:
+            input_state = 1;
             with(ballista)
             {
                 input_state = 1;
             }
         break;
         case 2:
+            input_state = 2
             with(ballista)
             {
                 input_state = 2;

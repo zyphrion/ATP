@@ -50,6 +50,7 @@ if(room != scene0)
 menu = 0;
 
 loading = true;
+room_goto(scene1)
 </string>
           </argument>
         </arguments>
@@ -72,9 +73,7 @@ loading = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(room == scene0 &amp;&amp; loading)
-room_goto_next();
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

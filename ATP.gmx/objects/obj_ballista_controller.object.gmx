@@ -193,20 +193,25 @@ switch(input_state)
     change_angle = 0;
     fire = 0;
     reload = 0;
+    break;
     case 1: change_angle = 1;
+        show_debug_message("W");
+        break;
     case 2: change_angle = -1;
-    case 3:;
-    case 4:;
-    case 5:fire = 1;
+        show_debug_message("S");
+        break;
+    case 3:;break;
+    case 4:;break;
+    case 5:fire = 1;break;
     case 6:reload = 1;
-    case 7:;
-    case 8:;
-    case 9:;
+    case 7:;break;
+    case 8:;break;
+    case 9:;break;
     default:
     change_angle = 0;
     fire = 0;
     reload = 0;
-    ;
+    ;break;
     
     
 }
