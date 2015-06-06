@@ -215,6 +215,7 @@ switch(input_state)
     
     
 }
+//obj_ballista.visible = false;
 </string>
           </argument>
         </arguments>

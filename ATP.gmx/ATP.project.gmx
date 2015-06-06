@@ -11,7 +11,15 @@
       <sprite>sprites\spr_ballista_anchor_wood</sprite>
       <sprite>sprites\spr_ballista_arm_wood</sprite>
       <sprite>sprites\spr_ballista_loader_wood</sprite>
-      <sprite>sprites\ballista_wheel_wood</sprite>
+      <sprite>sprites\spr_ballista_wheel_wood</sprite>
+    </sprites>
+    <sprites name="UI">
+      <sprites name="Buttons">
+        <sprite>sprites\spr_btn_menu_wood</sprite>
+      </sprites>
+      <sprites name="Backgrounds">
+        <sprite>sprites\spr_bgr_menu_stone</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -24,6 +32,15 @@
     <script>scripts\script0.gml</script>
   </scripts>
   <objects name="objects">
+    <objects name="UI">
+      <objects name="Buttons">
+        <object>objects\obj_button_wood</object>
+      </objects>
+      <objects name="Backdrops">
+        <object>objects\obj_bkdp_stone</object>
+      </objects>
+      <object>objects\obj_UI</object>
+    </objects>
     <objects name="Ballista">
       <object>objects\obj_ballista_base</object>
       <object>objects\obj_ballista_anchor</object>
@@ -31,6 +48,7 @@
       <object>objects\obj_ballista_loader</object>
       <object>objects\obj_ballista_front_wheel</object>
       <object>objects\obj_ballista_back_wheel</object>
+      <object>objects\obj_ballista</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_player_controller</object>

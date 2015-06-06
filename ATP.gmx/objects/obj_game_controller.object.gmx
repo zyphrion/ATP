@@ -31,26 +31,38 @@
 There are not many scenes for this game
 0 - Starting Scene
 This scene will include
-- Splash Screen
-- Starting Cinematic
-- Start Menu
+- 0 - Splash Screen
+- 1 - Starting Cinematic
+- 2 - Start Menu
 All options for gameplay will be chosen within the start menu system
 
 1 - Gameplay Scene
 This scene will include
-- The gameplay screen
-- The pause menu
-- The progression menus
+- 0 - The gameplay screen
+- 1 - The pause menu
+- 2 - The progression menus
 */
+//peices
+/*
+backdrop - this will be the background for any menus, in game or otherwise
+            the backdrop will be initially created, and just made visible when in use
+start_menu_button - 0/2 - will be the initial start menu button
+*/
+UI_controller = 0;
+player_controller = 0;
 
 scene0 = scene_start;
 scene1 = scene_game;
 if(room != scene0)
-{room_goto(scene0);}
+{
+    room_goto(scene0);
+    
+}
+
 menu = 0;
 
 loading = true;
-room_goto(scene1)
+//room_goto(scene1)
 </string>
           </argument>
         </arguments>
